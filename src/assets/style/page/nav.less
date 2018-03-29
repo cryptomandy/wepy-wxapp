@@ -1,0 +1,43 @@
+@import "../base/fn.less";
+.panel{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+.nav_box{
+    display: flex;
+    background: #fff;
+    .nav_item{
+        .fj(center);
+        color:@colorLightGray;
+        -webkit-align-items:center;
+        height: 120rpx;
+        font-size: 32rpx;
+        flex: 2;
+    }
+   
+    icon{
+        font-size: 46rpx;
+        display: inline-block;
+        color:@colorLightGray;
+        &:before {
+            font-family: 'iconfont';
+        }
+        &.icon-kuangshan{
+            &:before {
+                content: '\e6a6';
+            }
+        }
+        &.icon-wode{
+            &:before {
+                content: '\e8a0';
+            }
+        }
+    }
+    .nav_item.active{
+        color :@colorWarn;
+        icon{
+            color :@colorWarn;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+<template>
+  <view class="page">
+    
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: '资产记录'
+    }
+    components = {
+    }
+
+    mixins = []
+
+    data = {
+      userInfo: {}
+    }
+
+    computed = {
+    }
+
+    methods = {
+    }
+
+    events = {
+    }
+
+    onLaunch () {
+    }
+  }
+</script>
+
+<style lang="less">
+
+</style>

@@ -1,0 +1,44 @@
+<style lang="less">
+</style>
+
+<template>
+  <view class="page">
+    
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: '关于我们'
+    }
+    components = {
+    }
+
+    mixins = []
+
+    data = {
+    }
+
+    computed = {
+    }
+
+    methods = {
+    }
+
+    events = {
+    }
+
+    onLaunch () {
+    }
+
+    onLoad() {
+      this.getUserInfo()
+    }
+
+    async getUserInfo () {
+    }
+  }
+</script>

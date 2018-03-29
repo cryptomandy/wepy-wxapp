@@ -1,0 +1,53 @@
+// mixin
+@import "mixin/setOnepx.less";
+@import "mixin/text.less";
+
+// variable 和 常用 class
+@import "variable/global.less";  //常用class，引入了color.less 和font.less
+
+// 简写方便记忆
+//flex
+.fj(@type:space-between){
+    display: flex;
+    justify-content: @type;
+}
+//width, height
+.wh(@width,@height){
+    width: @width;
+    height: @height;
+}
+.radius(@size:30rpx){
+    border-radius: @size;
+    -webkit-border-radius: @size;
+}
+
+.Btn(@font-size: 32rpx, @bg: #fff, @color:#9217fe){
+    font-size: @font-size;
+    color: @colorWarn;
+    background-color: @bg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.smallbtn(@bg: #fff, @color:#9217fe){
+    color: @color;
+    background-color: @bg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.setArrow(@size: 20rpx, @border:2rpx, @color:@colorDarkLine, @direction: -45deg){ //依次为宽度，border宽，颜色，和方向
+    display: inline-block;
+    width: @size;
+    height: @size;
+    border-right: @border solid @color;
+    border-bottom: @border solid @color;
+    transform: rotate(@direction);
+    position: absolute;
+    right: 30rpx;
+    top: 50%;
+    margin-top: -@size/2;
+}
+.setGradient(){
+    background: -webkit-linear-gradient(top,#840cfe,#ea3d86);
+}

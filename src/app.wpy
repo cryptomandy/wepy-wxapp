@@ -1,0 +1,80 @@
+<script>
+  import wepy from 'wepy'
+  import 'wepy-async-function'
+
+  export default class extends wepy.app {
+    constructor () {
+      super()
+      this.use('promisify')
+      this.use('requestfix')
+    }
+
+    globalData = {
+      userInfo: null,
+      shareSource: false
+    }
+
+    config = {
+      pages: [
+        'pages/user/about',
+        'pages/index/index',
+        'pages/index/upload',
+        'pages/auth/bind',
+        'pages/other/introduce',
+        'pages/user/index',
+        'pages/user/invite',
+        'pages/user/record'
+      ],
+      window: {
+        backgroundTextStyle: 'dark',
+        navigationBarBackgroundColor: '#333',
+        navigationBarTitleText: '小马众包',
+        navigationBarTextStyle: 'white'
+      },
+      networkTimeout: {
+        request: 10000,
+        downloadFile: 10000
+      },
+      debug: true
+    }
+
+    onLaunch() {
+
+      this.getUserInfo()
+
+    }
+
+    async getUserInfo() {
+      if (this.globalData.userInfo) {
+        return this.globalData.userInfo
+      }
+      const res = await wx.getUserInfo()
+      this.globalData.userInfo = res.userInfo
+      return res.userInfo
+    }
+  }
+</script>
+
+<style lang="less">
+  @import "./assets/style/app.less";
+@font-face {
+  font-family: 'iconfont';  /* project id 602525 */
+  src: url('//at.alicdn.com/t/font_602525_9s15cj3whxdbcsor.eot');
+  src: url('//at.alicdn.com/t/font_602525_9s15cj3whxdbcsor.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_602525_9s15cj3whxdbcsor.woff') format('woff'),
+  url('//at.alicdn.com/t/font_602525_9s15cj3whxdbcsor.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_602525_9s15cj3whxdbcsor.svg#iconfont') format('svg');
+}
+  .iconfont {
+    font-family:"iconfont" !important;
+    font-size:16px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    display: inline-block;
+  }
+  .iconfont:before{
+    margin-right: 20rpx;
+}
+</style>

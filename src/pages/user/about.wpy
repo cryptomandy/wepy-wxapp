@@ -1,0 +1,68 @@
+<style lang="less">
+@import "../../assets/style/base/fn.less";
+.item_box{
+  padding: @p-top @p-left;
+  font-size: 28rpx;
+  background: #fff;
+  text{
+    color: @colorDarkGray;
+  }
+  view{
+    color: #A1A1A1;
+  }
+}
+</style>
+
+<template>
+  <view class="page">
+    <view class="item_box">
+      <text>关于我们</text>
+      <view>图链（Photograph Chain）基于区块链技术，通过众包方式，汇集社区用户，收集海量训练数据，用于人工智能产品应用。</view>
+    </view>
+    <view class="item_box">
+      <text>隐私声明</text>
+      <view>图链尊重并保护您通过我们的平台服务（包括平台、产品服务、解决方案、数据合作等）向我们提供的所有隐私。本隐私政策（“隐私政策”）适用于通过本平台服务收集的所有个人信息，描述了我们收集、使用、披露、保护信息的方式，并为您提供访问我们所维护的关于您的个人信息的渠道。本隐私政策并不适用于您通过其他方式向我们提供的或者我们通过其他公共来源所收集的属于公开信息的个人信息。</view>
+    </view>
+    <view class="item_box">
+      <text>常见问题</text>
+      <text>如何邀请好友加入？</text>
+      <view>将自己的要求海报发送至朋友圈，或直接通过微信发送给好友，好友注册后，您可得到相应奖励。</view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: '关于我们'
+    }
+    components = {
+    }
+
+    mixins = []
+
+    data = {
+    }
+
+    computed = {
+    }
+
+    methods = {
+    }
+
+    events = {
+    }
+
+    onLaunch () {
+    }
+
+    onLoad() {
+      this.getUserInfo()
+    }
+
+    async getUserInfo () {
+    }
+  }
+</script>
